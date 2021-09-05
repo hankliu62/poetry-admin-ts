@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <title>文萃后台管理网站</title>
+  <link rel="icon" href="/static/favicon.ico" sizes="48x48" type="image/ico">
+  <% for (var chunk in htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[chunk] %>"  as="style">
+  <% } %>
+  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
+  <% } %>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/javascript" src="/static/scripts/md5.js"></script>
+</body>
+
+</html>
